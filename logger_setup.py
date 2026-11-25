@@ -4,7 +4,6 @@ from datetime import datetime, timedelta
 
 
 def cleanup_old_logs(log_dir: str, retention_days: int) -> None:
-    """Удаляет лог-файлы старше retention_days дней."""
     if not os.path.isdir(log_dir):
         return
     cutoff = datetime.now() - timedelta(days=retention_days)
